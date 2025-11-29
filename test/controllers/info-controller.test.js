@@ -26,12 +26,12 @@ describe('InfoController', () => {
     }
 
     const versionUtil = new VersionUtil({
-      dataDir: dataDir,
+      dataDir,
       logger: dummyLogger
     })
 
     testInfoController = new InfoController({
-      versionUtil: versionUtil,
+      versionUtil,
       logger: dummyLogger
     })
   })

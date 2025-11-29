@@ -23,7 +23,7 @@ describe('VersionUtil', () => {
     }
 
     testVersionUtil = new VersionUtil({
-      dataDir: dataDir,
+      dataDir,
       logger: dummyLogger
     })
   })
