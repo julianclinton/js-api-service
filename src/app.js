@@ -11,10 +11,10 @@ const ErrorHandler = require('./util/error-handler')
 const { logger } = require('./util/service-logger')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 const { readFileSync } = require('fs')
-const authConfig = JSON.parse(readFileSync('./auth_config.json'))
 
 const app = express()
 const HOMEDIR = path.join(__dirname, '../')
+const authConfig = JSON.parse(readFileSync(path.join(HOMEDIR, 'auth_config.json')))
 
 const appName = require(path.join(HOMEDIR, 'package.json')).name
 

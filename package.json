@@ -1,7 +1,7 @@
 {
   "name": "api-gateway",
   "version": "0.1.0",
-  "description": "Process Miner service",
+  "description": "API gateway service",
   "main": "index.js",
   "engines": {
     "node": ">=22.0.0"
