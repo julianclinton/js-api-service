@@ -1,0 +1,12 @@
+services:
+  js_gateway:
+    image: js-api-gateway:latest
+    container_name: js-api-gateway
+    environment:
+      NODE_ENV: production
+      ASSET_SERVICE_HOST: 'localhost'
+      ASSET_SERVICE_PORT: '3100'
+      EM_SERVICE_HOST: 'localhost'
+      EM_SERVICE_PORT: '5672'
+    ports:
+      - 3001:3001

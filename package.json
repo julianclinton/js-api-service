@@ -1,0 +1,59 @@
+{
+  "name": "api-gateway",
+  "version": "0.1.0",
+  "description": "Process Miner service",
+  "main": "index.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "certs": "openssl req -nodes -new -x509 -subj \"/CN=localhost/O=Julian Clinton/C=GB\" -keyout tls/key.pem -out tls/cert.pem",
+    "audit": "npm audit --production --audit-level=high",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "prod:nix": "NODE_ENV=production node src/index.js",
+    "prod:win": "set NODE_ENV=production&&node src/index.js",
+    "lint": "standard --verbose",
+    "test": "standard && jest --coverage",
+    "doc": "jsdoc --configure jsdoc.json ."
+  },
+  "author": "Julian Clinton",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-jwt": "^8.5.1",
+    "express-jwt-authz": "^2.4.1",
+    "http-proxy-middleware": "^2.0.9",
+    "jwks-rsa": "^2.1.5",
+    "log4js": "^6.9.1",
+    "morgan": "^1.10.1",
+    "prom-client": "^14.2.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.0.0",
+    "jest": "^27.5.1",
+    "jsdoc": "^3.6.10",
+    "nodemon": "^3.1.11",
+    "sinon": "^12.0.1",
+    "sinon-chai": "^3.7.0",
+    "standard": "^17.1.2"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "src/index.js"
+    ]
+  },
+  "standard": {
+    "globals": [],
+    "env": [
+      "jest"
+    ]
+  }
+}
